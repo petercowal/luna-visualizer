@@ -12,38 +12,20 @@ FFTBackground2 fftBackground;
 
 void setup() {
   
-  //blue magenta
-  color color1 = color(20, 80, 180);
-  color color2 = color(120, 20, 70);
-  
-  //orange blue
-  //color color1 = color(120, 50, 10);
-  //color color2 = color(40, 80, 180);
-  
-  //orange gray
-  //color color1 = color(120, 50, 10);
-  //color color2 = color(30, 100, 140);
-  
-  //blue green
-  //color color1 = color(50, 150, 30);
-  //color color2 = color(20, 80, 140);
-  
-  //red orange
-  //color color1 = color(180, 50, 10);
-  //color color2 = color(100, 100, 50);
-  
-  //deep blue
-  //color color1 = color(40, 5, 90);
-  //color color2 = color(10, 120, 140);
-
-  size(1280, 720, P2D);
-  background(0);
   
   // determines the tuning system used by the pitch class analyzer
   int edo = 19;
   nowPlaying = new SoundFile(this, "petet_19.wav");
   
+  // displays song title
   title = "";
+  
+  color[] colors = ColorPalette(Palette.BLUE_MAGENTA);
+  color color1 = colors[0]; 
+  color color2 = colors[1];
+
+  size(1280, 720, P2D);
+  background(0);
   
   fftBackground = new FFTBackground2(this);
   eclipseVisualizer = new EclipseVisualizer(this, edo*2);
